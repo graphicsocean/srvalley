@@ -1,32 +1,30 @@
 @extends('frontend.app')
-@section('title', 'Banquet ' . $name)
+@section('title', 'Banquet ' . $banquet->name)
 @section('content')
-    @livewire('frontend.breadcrumb', ['title' => 'banquet '.$name])
+    @livewire('frontend.breadcrumb', ['title' => 'banquet '.$banquet->slug])
     <!-- details starts-->
     <section class="details">
         <div class="container">
             <div class="detail-slider">
                 <div class="slider-1 slider-for">
-                    <div class="detail-slider-item">
-                        <img src="{{ asset('ui/images/detail-slider/'.$name.'.webp') }}" alt="image">
-                    </div>
-                    <div class="detail-slider-item">
-                        <img src="{{ asset('ui/images/detail-slider/'.$name.'.webp') }}" alt="image">
-                    </div>
+                    @foreach ($sliders as $slider)
+                        <div class="detail-slider-item">
+                            <img src="{{ asset('ui/images/detail-slider/'. $banquet->slider->path) }}" alt="{{$banquet->name}}">
+                        </div>
+                    @endforeach
                 </div>
                 <div class="slider-1 slider-nav">
-                    <div class="detail-slider-item">
-                        <img src="{{ asset('ui/images/detail-slider/'.$name.'.webp') }}" alt="image">
-                    </div>
-                    <div class="detail-slider-item">
-                        <img src="{{ asset('ui/images/detail-slider/'.$name.'.webp') }}" alt="image">
-                    </div>
+                    @foreach ($sliders as $slider)
+                        <div class="detail-slider-item">
+                            <img src="{{ asset('ui/images/detail-slider/'. $banquet->slider->path) }}" alt="{{$banquet->name}}">
+                        </div>
+                    @endforeach
                 </div>
             </div>
             <div class="detail-content">
                 <div class="detail-title">
                     <div class="title-left">
-                        <h3>banquet {{ $name }}</h3>
+                        <h3>{{ $banquet->name }}</h3>
                         <div class="rating">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
@@ -43,7 +41,7 @@
                             <li class="pinterest"><i class="fab fa-pinterest"></i></li>
                         </ul>
                         <div class="title-price">
-                            <h3>$1200<span>/Night</span></h3>
+                            <h3>₹ {{$banquet->price}}<span>/Night</span></h3>
                         </div>
                     </div>
                 </div>
@@ -53,10 +51,9 @@
                             <div class="overview-outer">
                                 <div class="overview-content mar-bottom-30">
                                     <h4>Overview</h4>
-                                    <p> full AC banquet hall covered with an area of - 12000 sq ft with 2 AC king room and a
-                                        guest capacity of 800 at a time</p>
+                                    <p>{!!html_entity_decode($banquet->overview)!!}</p>
                                 </div>
-                                <div class="price-table ">
+                                {{-- <div class="price-table ">
                                     <h4>Price and Rates(/Night)</h4>
                                     <table class="table table-bordered mar-0">
                                         <thead>
@@ -82,7 +79,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -153,6 +150,6 @@
     <!-- detail features Ends-->
 
     <!-- related rooms starts -->
-    @livewire('frontend.explore-banquate')
+    @livewire('frontend.explore-banquate',['banquets'=>$banquets])
     <!-- related rooms Ends -->
 @endsection

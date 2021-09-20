@@ -29,7 +29,10 @@
         <div id="status"></div>
     </div>
     <!-- Preloader Ends -->
-    @livewire('frontend.header')
+    @php
+        $banquets = App\Models\Banquet::where('status', 1)->get()
+    @endphp
+    @livewire('frontend.header',['navigation'=>$banquets])
     @yield('content')
     @livewire('frontend.footer')
 

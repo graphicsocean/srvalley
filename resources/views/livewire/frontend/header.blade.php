@@ -40,10 +40,11 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false">Banquet's<i class="fa fa-angle-down"
                                     aria-hidden="true"></i></a>
+                                    {{-- {{ $navigation}} --}}
                             <ul class="dropdown-menu">
-                                <li><a href="{{ url('banquet/butterfly') }}">Banquet Butterfly</a></li>
-                                <li><a href="{{ url('banquet/lotus') }}">Banquet Lotus</a></li>
-                                <li><a href="{{ url('banquet/Orchid') }}">Banquet Orchid</a></li>
+                                @foreach ($navigation as $item)
+                                    <li><a href="{{ url('banquet/'.$item->slug) }}">{{$item->name}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                     </ul>

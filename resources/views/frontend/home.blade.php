@@ -107,7 +107,7 @@
 
 
     <!--  Banquate starts -->
-   @livewire('frontend.explore-banquate')
+   @livewire('frontend.explore-banquate', ['banquets' => $banquets])
     <!-- Banquate Ends -->
 
     {{-- Sound Proof Alcohol Served Air Conditioned Linens Provided Parking Available Audio-Visual Systems Changing Room Available Drinking Water Provided Catering Services Offered Chairs and Tables Provided Audio-Visual Managing Staff Support and Cleaning Crew Provided Elderly and Physically Disabled Friendly --}}
