@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home');
 });
+Route::get('about', [FrontendController::class, 'about'])->name('about');
+Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
+Route::get('gallery', [FrontendController::class, 'gallery'])->name('gallery');
+Route::get('banquet/{name}', [FrontendController::class, 'banquet']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

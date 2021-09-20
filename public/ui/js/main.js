@@ -18,7 +18,7 @@
       $("#preloader").delay(200).fadeOut("slow");
       $("body").delay(200).css({ "overflow": "visible" });
 
-      
+
       /* Init Wow Js */
       new WOW().init();
 
@@ -63,7 +63,7 @@
   });
 
   jQuery(document).ready(() => {
-    jQuery('.js-video-button').modalVideo({ channel: 'vimeo' });
+    jQuery('.js-video-button').modalVideo();
   });
 
 
@@ -234,9 +234,9 @@
     });
   }
 
-  $("#contactform").validate({      
+  $("#contactform").validate({
     submitHandler: function() {
-      
+
       $.ajax({
         url : 'mail/contact.php',
         type : 'POST',
@@ -250,7 +250,7 @@
         success : function( result ){
           $('#contactform-error-msg').html( result );
           $("#contactform")[0].reset();
-        }     
+        }
       });
 
     }
@@ -388,3 +388,9 @@ jQuery(document).on('click','.dark-mode a',function(){
 jQuery(document).on('click','.light-mode a',function(){
   jQuery('body').removeClass('night-mode');
 });
+$document.on('click', '#load-more', function () {
+
+});
+function submitForm(){
+    document.getElementById("submit").click();
+}
