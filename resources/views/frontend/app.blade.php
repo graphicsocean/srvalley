@@ -30,7 +30,7 @@
     </div>
     <!-- Preloader Ends -->
     @php
-        $banquets = App\Models\Banquet::where('status', 1)->get()
+        $banquets = App\Models\Banquet::where('status', 1)->get();
     @endphp
     @livewire('frontend.header',['navigation'=>$banquets])
     @yield('content')

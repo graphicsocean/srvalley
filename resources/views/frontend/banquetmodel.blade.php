@@ -53,33 +53,6 @@
                                     <h4>Overview</h4>
                                     <p>{!!html_entity_decode($banquet->overview)!!}</p>
                                 </div>
-                                {{-- <div class="price-table ">
-                                    <h4>Price and Rates(/Night)</h4>
-                                    <table class="table table-bordered mar-0">
-                                        <thead>
-                                            <tr>
-                                                <td>Sun</td>
-                                                <td>Mon</td>
-                                                <td>Tues</td>
-                                                <td>Wed</td>
-                                                <td>Thurs</td>
-                                                <td>Fri</td>
-                                                <td>Sat</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>$1200</td>
-                                                <td>$1200</td>
-                                                <td>$1200</td>
-                                                <td>$1200</td>
-                                                <td>$1200</td>
-                                                <td>$1200</td>
-                                                <td>$1200</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div> --}}
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -96,6 +69,7 @@
 
     <!-- amenities starts -->
     @livewire('frontend.amenities')
+    @livewire('frontend.services')
     <!-- amenities Ends -->
 
     <!-- detail features starts-->

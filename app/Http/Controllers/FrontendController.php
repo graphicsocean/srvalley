@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Amenitie;
+use App\Models\Banner;
 use App\Models\Banquet;
+use App\Models\Service;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -10,7 +13,10 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        return view('frontend.home')->with('banquets', Banquet::where('status', 1)->get());
+        $banquets = Banquet::where('status', 1)->get();
+        $banners = Banner::where('status', 1)->get();
+
+        return view('frontend.home')->with(['banquets'=> $banquets, 'banners'=> $banners]);
     }
     public function about()
     {
@@ -19,6 +25,10 @@ class FrontendController extends Controller
     public function contact()
     {
         return view('frontend.contact');
+    }
+    public function submit(Request $request)
+    {
+        return $request->all();
     }
     public function gallery()
     {

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Banquet;
 use App\Models\Slider;
+use App\Models\Banquet;
+use App\Models\Service;
+use App\Models\Amenitie;
 use Illuminate\Http\Request;
 
 class BanquetController extends Controller
@@ -15,7 +17,8 @@ class BanquetController extends Controller
      */
     public function index()
     {
-        //
+        $banquet = Banquet::all();
+        return view('admin.banquet.index', compact('banquet'));
     }
 
     /**
@@ -25,7 +28,7 @@ class BanquetController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.banquet.create');
     }
 
     /**
@@ -68,7 +71,7 @@ class BanquetController extends Controller
      */
     public function edit(Banquet $banquet)
     {
-        //
+        return view('admin.banquet.edit', compact('banquet'));
     }
 
     /**

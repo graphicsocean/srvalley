@@ -6,18 +6,19 @@
         <div class="slider">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(ui/images/slider/slider10.jpg)">
-                        <div class="swiper-content">
-                            <div class="slider-logo">
-                                <img src="{{ asset('ui/images/icons/bed-logo.png') }}" alt="Image">
+                    @foreach ($banners as $item)
+                        <div class="swiper-slide" style="background-image:url(ui/images/slider/{{$item->image}})">
+                            <div class="swiper-content">
+                                <div class="slider-logo">
+                                    {{-- <img src="{{ asset('ui/images/icons/bed-logo.png') }}" alt="Image"> --}}
+                                </div>
+                                {{-- <h3 data-animation="animated fadeInUp">{!! html_entity_decode($item->title1)!!}</h3> --}}
+                                <h1 data-animation="animated fadeInUp">{!! html_entity_decode($item->title2)!!}</h1>
+                                <a href="{{url('/'.$item->cta_link)}}" data-animation="animated fadeInUp" class="slider-btn btn-or mar-right-10">{{$item->cta}}</a>
                             </div>
-                            <h3 data-animation="animated fadeInUp">Room Availability Checker & Booking</h3>
-                            <h1 data-animation="animated fadeInUp">Book Early <span>Save</span>More</h1>
-                            <a href="#" data-animation="animated fadeInUp" class="slider-btn btn-or mar-right-10">Explore Our
-                                Rooms</a>
                         </div>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(ui/images/slider/slider11.jpg)">
+                    @endforeach
+                    {{-- <div class="swiper-slide" style="background-image:url(ui/images/slider/slider2.webp)">
                         <div class="swiper-content">
                             <div class="slider-logo">
                                 <img src="{{ asset('ui/images/icons/bed-logo.png') }}" alt="Image">
@@ -27,7 +28,7 @@
                             <a href="#" data-animation="animated fadeInUp" class="slider-btn btn-or">Book A Room Now</a>
                         </div>
                     </div>
-                    <div class="swiper-slide" style="background-image:url(ui/images/slider/slider3.jpg)">
+                    <div class="swiper-slide" style="background-image:url(ui/images/slider/slider3.webp)">
                         <div class="swiper-content">
                             <div class="slider-logo">
                                 <img src="{{ asset('ui/images/icons/bed-logo.png') }}" alt="Image">
@@ -38,7 +39,7 @@
                                 Our Rooms</a>
                             <a href="#" data-animation="animated fadeInUp" class="slider-btn btn-wt">Book A Room Now</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -59,14 +60,14 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="about-content">
-                            <h3 class="mar-bottom-30">Finest and Luxurious Venue in the Town</h3>
-                            <p>When words fail, senses speak. Truly leaving you speechless, SR Valley Wedding Venue,
+                            <h3 class="mar-bottom-30">Luxurious Wedding Location in the Bhubaneswar</h3>
+                            <p style="text-align: justify">When words fail, senses speak. Truly leaving you speechless, SR Valley Wedding Venue,
                                 Bhubaneswar gets as bigger, better, and grander as you can imagine! Located on New Bypass
                                 Road this venue is situated near Janani Hospital and 38 minutes away from Bhubaneswar
                                 Railway Station. Home to a couple of sprawling lawns and a splendid banquet hall, SR Valley
                                 Wedding Venue, Bhubaneswar is straight out of a dream and is sure to mesmerize you with its
                                 beauty and splendor!</p>
-                            <p>The sprawling lawn at SR Valley Wedding Venue, Baragarh, Bhubaneswar is fit for a regal
+                            <p style="text-align: justify">The sprawling lawn at SR Valley Wedding Venue, Baragarh, Bhubaneswar is fit for a regal
                                 reception or a lavish celebration. Surrounded by trees and green covers, the lawn can
                                 accommodate a large number of guests over thousands comfortably. The banquet hall is no
                                 less. Boasting an enchanting ambiance of beautiful lights, pastel adorned walls, and magical
@@ -111,64 +112,13 @@
     <!-- Banquate Ends -->
 
     {{-- Sound Proof Alcohol Served Air Conditioned Linens Provided Parking Available Audio-Visual Systems Changing Room Available Drinking Water Provided Catering Services Offered Chairs and Tables Provided Audio-Visual Managing Staff Support and Cleaning Crew Provided Elderly and Physically Disabled Friendly --}}
-    <!-- Call To Action Starts 20% off-->
+
+    <!-- amenities Starts -->
     @livewire('frontend.amenities')
-    <!-- Call To Action Ends -->
+    <!-- amenities Ends -->
 
     <!-- Services Starts -->
-    <section class="services service-style-3">
-        <div class="container">
-            <div class="section-title">
-                <h2>Explore <span>Services</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ex neque, sodales accumsan sapien et,
-                    auctor vulputate quam donec vitae consectetur turpis</p>
-            </div>
-            <div class="service-outer">
-                <div class="service-item mar-bottom-20">
-                    <div class="display-flex">
-                        <div class="service-image">
-                            <img src="{{ asset('ui/images/feature1.jpg') }}" alt="Image">
-                        </div>
-                        <div class="service-detail pad-left-30">
-                            <h3><a href="service-detail.html">Catering  & <span>Cleaning</span></a></h3>
-                            <p>Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id
-                                est laborum sed ut perspiciatis unde omnis natus error.Inventore veritatis et quasi archite
-                                beatae vitae dicta.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-item mar-bottom-20">
-                    <div class="display-flex">
-
-                        <div class="service-detail pad-right-30 text-right">
-                            <h3><a href="service-detail.html">Venue <span>Decorators</span></a></h3>
-                            <p>Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id
-                                est laborum sed ut perspiciatis unde omnis natus error.Inventore veritatis et quasi archite
-                                beatae vitae dicta.</p>
-                        </div>
-                        <div class="service-image">
-                            <img src="{{ asset('ui/images/feature2.jpg') }}" alt="Image">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-item">
-                    <div class="display-flex">
-                        <div class="service-image">
-                            <img src="{{ asset('ui/images/feature5.jpg') }}" alt="Image">
-                        </div>
-                        <div class="service-detail pad-left-30">
-                            <h3><a href="service-detail.html">Wedding <span>Planners</span></a></h3>
-                            <p>Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id
-                                est laborum sed ut perspiciatis unde omnis natus error.Inventore veritatis et quasi archite
-                                beatae vitae dicta.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @livewire('frontend.services')
     <!-- Services Ends -->
 
     <!-- menu Starts -->
@@ -339,11 +289,11 @@
         <div class="container">
             <div class="call-content text-center">
                 <div class="call-button">
-                    <button type="button" class="play-btn js-video-button" data-video-id="aqz-KE-bpKQ"><i
+                    <button onclick="vertualTour();" type="button" class="play-btn" data-video-id="aqz-KE-bpKQ"><i
                             class="fa fa-play"></i></button>
                 </div>
                 <div class="video-figure"></div>
-                <h2 class="white mar-top-25 mar-bottom-0">virtual Tour of a brand <br><span>Hotux</span> hotel</h2>
+                <h2 class="white mar-top-25 mar-bottom-0">virtual Tour of our <br><span>Banquet's</span></h2>
             </div>
         </div>
     </section>

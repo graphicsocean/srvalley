@@ -1,4 +1,4 @@
-{{$sliders }}</td>
+{{$sliders }}
 
 {{-- @foreach ($collection as $item)
 

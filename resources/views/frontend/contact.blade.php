@@ -3,6 +3,9 @@
 @section('content')
     @livewire('frontend.breadcrumb', ['title' => 'contact us'])
     <!-- contact starts -->
+    @php
+    $settings = App\Models\Setting::first();
+    @endphp
     <section class="contact">
         <div class="container">
             <div class="contact-info">
@@ -13,7 +16,7 @@
                                 <i class="fa fa-map-marker"></i>
                             </div>
                             <div class="info-content">
-                                <p>SR Valley, New Bypass Road, Plot No-58, NH316, Bhubaneswar</p>
+                                <p>{{ $settings->address }}</p>
                             </div>
                         </div>
                     </div>
@@ -23,8 +26,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="info-content">
-                                <p>+91-8048072230</p>
-                                <p>+91-8048072230</p>
+                                <h4 style="color: white">+91-{{ $settings->phone }}</h4>
                             </div>
                         </div>
                     </div>
@@ -34,8 +36,7 @@
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <div class="info-content">
-                                <p>info@srvalley.com</p>
-                                <p>info@srvalley.com</p>
+                                <h4 style="color: white">+91-{{ $settings->email }}</h4>
                             </div>
                         </div>
                     </div>
@@ -44,17 +45,22 @@
             <div class="contact-map">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div id="map" style="height: 535px; width: 100%;"></div>
+                        <div id="map" style="height: 535px; width: 100%;">
+                            <iframe width="100%" height="535"
+                                src="https://maps.google.com/maps?q=SR%20Valley%20Wedding%20Venue%20&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"></iframe>
+                        </div>
                     </div>
                     <div class="col-lg-6">
                         <div id="contact-form" class="contact-form">
                             <h3>Keep in Touch</h3>
                             <div id="contactform-error-msg"></div>
 
-                            <form method="post" action="#" name="contactform" id="contactform">
+                            <form method="post" action="{{ 'submit-contact-form' }}">
+                                @csrf
                                 <div class="form-group">
                                     <input type="text" name="first_name" class="form-control" id="fname"
-                                        placeholder="First Name">
+                                        placeholder="First Name" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="last_name" class="form-control" id="lname"
@@ -64,14 +70,14 @@
                                     <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="phone" class="form-control" id="phnumber"
-                                        placeholder="Phone">
+                                    <input type="text" name="phone" class="form-control" id="phnumber" placeholder="Phone"
+                                        required>
                                 </div>
                                 <div class="textarea">
-                                    <textarea name="comments" placeholder="Enter a message"></textarea>
+                                    <textarea name="message" placeholder="Enter a message"></textarea>
                                 </div>
                                 <div class="comment-btn text-right">
-                                    <input type="submit" class="btn btn-orange" id="submit" value="Send Message">
+                                    <button type="submit" class="btn btn-orange" id="submit">submit</button>
                                 </div>
                             </form>
                         </div>

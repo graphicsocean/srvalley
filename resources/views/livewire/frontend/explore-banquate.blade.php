@@ -1,8 +1,8 @@
-<section class="rooms">
+<section class="rooms" id="banqets">
     <div class="container">
         <div class="section-title">
             <h2>Explore <span>banquate</span></h2>
-            <p>Amazing services for {{count($banquets)}} Banquets are:</p>
+            <p>Our Amazing {{count($banquets)}} Banquets are:</p>
         </div>
         <div class="room-outer">
             <div class="row">
