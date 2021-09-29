@@ -20,22 +20,25 @@
 
             <div class="row mar-top-50">
                 <div class="isotopeContainer">
-                   @for ($i=1;$i <=12;$i++)
-                        <div class="isotopeSelector butterfly col-lg-4 col-md-6">
-                            <div class="gallery-item">
-                                <div class="gallery-image">
-                                    <img src="{{ asset('ui/images/gallery/'.$i.'.webp') }}" alt="image">
-                                </div>
-                                <div class="gallery-content">
-                                    <ul>
-                                        <li><a href="{{ asset('ui/images/gallery/'.$i.'.webp') }}" data-lightbox="gallery"
-                                                data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-share"></i></a></li>
-                                    </ul>
+                    @if ($gallery->count() > 0)
+                        @foreach ($gallery as $item)
+                            <div class="isotopeSelector butterfly col-lg-4 col-md-6">
+                                <div class="gallery-item">
+                                    <div class="gallery-image">
+                                        <img src="{{ asset($item->path) }}" alt="SR valley image" loading='lazy'>
+                                    </div>
+                                    <div class="gallery-content">
+                                        <ul>
+                                            <li><a href="{{ asset($item->path) }}"
+                                                    data-lightbox="gallery" data-title="SR valley"><i
+                                                        class="fa fa-eye"></i></a></li>
+                                            {{-- <li><a href="#"><i class="fa fa-share"></i></a></li> --}}
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                   @endfor
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

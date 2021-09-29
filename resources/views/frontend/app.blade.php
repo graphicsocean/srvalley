@@ -17,6 +17,8 @@
     <link href="{{ asset('ui/css/style.css') }}" rel="stylesheet" type="text/css">
     <!--Plugin CSS-->
     <link href="{{ asset('ui/css/plugin.css') }}" rel="stylesheet" type="text/css">
+    {{-- custom css --}}
+    <link href="{{ asset('ui/css/custom.css') }}" rel="stylesheet" type="text/css">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
@@ -28,6 +30,9 @@
     <div id="preloader">
         <div id="status"></div>
     </div>
+    <a  class="whats-app" href="https://wa.me/919437071887" target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
     <!-- Preloader Ends -->
     @php
         $banquets = App\Models\Banquet::where('status', 1)->get();

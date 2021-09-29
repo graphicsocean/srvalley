@@ -26,7 +26,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="info-content">
-                                <h4 style="color: white">+91-{{ $settings->phone }}</h4>
+                                <p style="color: white">+91-{{ $settings->phone }}</p>
+                                <p style="color: white">+91-97766 46481</p>
                             </div>
                         </div>
                     </div>
@@ -36,7 +37,8 @@
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <div class="info-content">
-                                <h4 style="color: white">+91-{{ $settings->email }}</h4>
+                                <p style="color: white">{{ $settings->email }}</p>
+                                <p style="color: white;visibility: hidden;">.</p>
                             </div>
                         </div>
                     </div>

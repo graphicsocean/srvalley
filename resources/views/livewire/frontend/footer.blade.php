@@ -8,8 +8,7 @@ $banquets = App\Models\Banquet::all();
         <div class="container">
             <div class="section-title title-white">
                 <h2>Subscribe to our <span>Newsletter</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ex neque, sodales accumsan sapien et,
-                    auctor vulputate quam donec vitae consectetur turpis</p>
+                <p>Subscribe For Party Ideas and Offers.</p>
             </div>
             <div class="newsletter-form">
                 <form>
@@ -62,7 +61,7 @@ $banquets = App\Models\Banquet::all();
                                 <ul>
                                     <li>Tel: +91-{{ $settings->phone }}</li>
                                     <li>Email: {{ $settings->email }}</li>
-                                    <li>{{ $settings->address }}</li>
+                                    <li>Address: {{ $settings->address }}</li>
                                 </ul>
                             </div>
                         </div>

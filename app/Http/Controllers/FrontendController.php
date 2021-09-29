@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Amenitie;
 use App\Models\Banner;
 use App\Models\Banquet;
+use App\Models\Gallery;
 use App\Models\Service;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -32,6 +33,7 @@ class FrontendController extends Controller
     }
     public function gallery()
     {
-        return view('frontend.gallery');
+        $gallery = Gallery::all();
+        return view('frontend.gallery')->with(['gallery'=> $gallery]);
     }
 }

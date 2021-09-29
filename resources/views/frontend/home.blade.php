@@ -13,7 +13,7 @@
                                     {{-- <img src="{{ asset('ui/images/icons/bed-logo.png') }}" alt="Image"> --}}
                                 </div>
                                 {{-- <h3 data-animation="animated fadeInUp">{!! html_entity_decode($item->title1)!!}</h3> --}}
-                                <h1 data-animation="animated fadeInUp">{!! html_entity_decode($item->title2)!!}</h1>
+                                <h1 class="f-37" data-animation="animated fadeInUp">{!! html_entity_decode($item->title2)!!}</h1>
                                 <a href="{{url('/'.$item->cta_link)}}" data-animation="animated fadeInUp" class="slider-btn btn-or mar-right-10">{{$item->cta}}</a>
                             </div>
                         </div>
@@ -221,7 +221,7 @@
     <!-- menu Ends -->
 
     <!-- Reviews Starts -->
-    <section class="reviews reviews-style-1 reviews-style-2">
+    {{-- <section class="reviews reviews-style-1 reviews-style-2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-12">
@@ -281,7 +281,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Reviews Ends -->
 
     <!-- Call To Action Starts -->

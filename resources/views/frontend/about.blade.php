@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="about-us-image mar-top-50">
-                        <img src="{{ asset('ui/images/gallery/gallery1.jpg') }}" alt="image">
+                        <img src="{{ asset('ui/images/gallery/5.webp') }}" alt="image">
                     </div>
                 </div>
 
@@ -163,7 +163,7 @@
     <!-- about video Ends -->
 
     <!-- Reviews Starts -->
-    <section class="reviews">
+    {{-- <section class="reviews">
         <div class="container">
             <div class="section-title title-white">
                 <h2>Explore <span>Reviews</span></h2>
@@ -215,7 +215,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Reviews Ends -->
 
     <!-- Services Starts -->
